@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+        .card{
+            height: 350px;
+            width: 350px;
+            background-color: #85e0e0;
+            margin: 20px auto;
+            display: block;
+            padding: 20px;
+            border: #258e8e 3px solid;
+            border-radius: 8px;
+        }
+        h1{            
+            text-align: center;
+        }
+        body{
+            background-color: #e6ffff;
+            margin: 0;
+            padding: 0;
+        }
+        #img{
+            height: 150px;
+            width: 150px;
+            margin: 50px auto;
+            display: block;
+        }
+        .btn{
+            height: 35px;
+            width: 100px;
+            font-size: 20px;
+            background-color:#d6f5f5;
+            border: black 3px solid;
+            border-radius: 5px;
+            margin: 2px auto;
+            display: block;
+        }
+        .btn:hover{
+            box-shadow: black 0.5px ;
+            transition: 0.3s;
+            background-color: #258e8e;
+            border: none;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+    <h1>Dice Roller</h1>
+    <img id="img" src="./dice.png">
+    <button class="btn" type="button" onclick="Diceroll()">Roll</button>
+    </div>
+
+    <script>
+    function resetimg() {
+        const primoutput = document.getElementById("img");
+        primoutput.src="dice.png";
+     }
+
+      function Diceroll() {
+        max = 6;
+        min = 1;
+        const randomnum = Math.round(Math.random() * (max - min)) + min;
+
+        const primoutput = document.getElementById("img");
+
+        if (randomnum == 1) {
+          primoutput.src = "one.png";
+        }
+        else if (randomnum == 2) {
+          primoutput.src = "two.png";
+        }
+
+        else if (randomnum == 3) {
+          primoutput.src = "three.png";
+        }
+
+        else if (randomnum == 4) {
+          primoutput.src = "four.png";
+        }
+
+        else if (randomnum == 5) {
+          primoutput.src = "five.png";
+        }
+        else if (randomnum == 6) {
+          primoutput.src = "six.png";
+        }
+
+
+        setTimeout(resetimg, 2000);
+
+
+      }
+    </script>
+
+</body>
+</html>
